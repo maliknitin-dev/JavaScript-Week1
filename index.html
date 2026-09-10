@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beautiful ToDo App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>TO-DO LIST</h1>
+      <p>Get stuff done. No excuses.</p>
+    </header>
+
+    <form id="todo-form" class="todo-form">
+      <label class="sr-only" for="todo-input">New task</label>
+      <input id="todo-input" type="text" maxlength="200" placeholder="Type a task and press Add..." autocomplete="off" required>
+      <button type="submit">ADD</button>
+    </form>
+
+    <section class="toolbar" aria-label="Task controls">
+      <div id="filters" class="filters" role="group" aria-label="Filter tasks">
+        <button class="filter-button active" type="button" data-filter="all">ALL</button>
+        <button class="filter-button" type="button" data-filter="active">ACTIVE</button>
+        <button class="filter-button" type="button" data-filter="completed">DONE</button>
+      </div>
+      <button id="clear-completed" class="danger-button" type="button">CLEAR DONE</button>
+    </section>
+
+    <p id="task-count" class="task-count" aria-live="polite">0 tasks left</p>
+    <ul id="todo-list" class="todo-list" aria-label="ToDo items"></ul>
+    <p id="empty-message" class="empty-message">Nothing here yet. Add a task above.</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
